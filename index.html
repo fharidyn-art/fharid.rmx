@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+
+<!--PENGATURAN WEB-->
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FHARID FLM STORE</title>
+
+<style>
+
+/* RESET */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+/* BODY */
+body{
+background:url("BEAGROUND.jpg") no-repeat center center fixed;
+background-size:cover;
+color:white;
+}
+/* HEADER */
+header{
+padding:10px;
+background:linear-gradient(90deg,#6a00ff,#00bfff);
+box-shadow:0 0 20px white;
+
+position:fixed;
+top:0;
+left:0;
+width:100%;
+z-index:1000;
+}
+.header-content{
+display:flex;
+align-items:center;
+gap:18px;
+max-width:900px;
+margin:auto;
+}
+.header-content img{
+width:50px;
+height:50px;
+border-radius:50%;
+object-fit:cover;
+}
+.header-text h1{
+font-size:28px;
+margin-bottom:6px;
+}
+.header-text p{
+opacity:.8;
+font-size:15px;
+}
+/* CONTAINER */
+.container{
+width:85%;
+max-width:900px;
+margin:auto;
+padding:100px 0 50px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:25px;
+}
+/* CARD PRODUK */
+.card{
+background:#181818;
+border:2px solid #00aaff;
+border-radius:40px;
+overflow:hidden;
+transition:.3s;
+box-shadow:0 0 15px rgba(0,170,255,.25);
+}
+.card:hover{
+transform:translateY(-8px);
+box-shadow:0 0 25px #00aaff;
+}
+.card img{
+width:85%;
+margin:20px auto;
+display:block;
+aspect-ratio:1/1;
+object-fit:cover;
+border-radius:10px;
+}
+/* INFO PRODUK */
+.info{
+padding:18px;
+}
+
+.info h2{
+margin-bottom:10px;
+font-size:23px;
+
+}
+.price{
+font-size:24px;
+color:#00ff88;
+margin:10px 0;
+font-weight:bold;
+}
+.stats{
+color:#bbb;
+margin-bottom:15px;
+}
+/* TOMBOL */
+button{
+padding:12px;
+border:none;
+border-radius:10px;
+cursor:pointer;
+font-size:16px;
+font-weight:bold;
+transition:.3s;
+}
+.play{
+background:#00bfff;
+color:white;
+width:48%;
+}
+.buy{
+background:#00ff88;
+color:white;
+width:48%;
+float:right;
+}
+button:hover{
+opacity:.85;
+}
+/* AUDIO */
+audio{
+width:100%;
+margin-top:15px;
+}
+/* FOOTER */
+footer{
+text-align:center;
+padding:20px;
+color:#888;
+}
+</style>
+</head>
+<body>
+  
+<!-- HEADER -->
+<header>
+<div class="header-content">
+<img src="LOGO.jpg" alt="Logo">
+<div class="header-text">
+<h1>FHARID RMX</h1>
+<p>Flm Enak Ya Cuman Di Fharid Rmx</p>
+</div>
+
+</div>
+</header>
+<!-- PRODUK 1 -->
+<div class="container">
+<!------------------------------------->
+
+
+
+
+<div class="card">
+<!-- Cover Album -->
+<img src="LOGO.jpg">
+<div class="info">
+<!-- Judul Lagu -->
+<h2>DJ STYHGT NANDA 777</h2>
+<!-- Harga -->
+<div class="price">
+Rp45.000
+</div>
+<!-- Jumlah Terjual -->
+<div class="stats">
+Terjual 2
+</div>
+<!-- Tombol Preview -->
+<button class="play"
+onclick="
+document.querySelectorAll('audio').forEach(a=>{
+    a.pause();
+    a.currentTime=0;
+    a.style.display='none';
+});
+document.getElementById('audio1').style.display='block';
+document.getElementById('audio1').play();
+">
+▶ Preview
+</button>
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+<!-- Audio Lagu -->
+<audio id="audio1" controls style="display:none;">
+<source src="NANDA1.mp3">
+</audio>
+</div>
+</div>
+<!------------------------------------->
+
+
+
+
+<div class="card">
+<!-- Cover Album -->
+<img src="LOGO.jpg">
+<div class="info">
+<!-- Judul Lagu -->
+<h2>DJ PLAY DATE - IMAM SIDIK</h2>
+<!-- Harga -->
+<div class="price">
+Rp45.000
+</div>
+<!-- Jumlah Terjual -->
+<div class="stats">
+Terjual 1
+</div>
+<!-- Tombol Preview -->
+<button class="play"
+onclick="
+document.querySelectorAll('audio').forEach(a=>{
+    a.pause();
+    a.currentTime=0;
+    a.style.display='none';
+});
+document.getElementById('audio2').style.display='block';
+document.getElementById('audio2').play();
+">
+▶ Preview
+</button>
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+<!-- Audio Lagu -->
+<audio id="audio2" controls style="display:none;">
+<source src="IMAM SIDIK2.mp3">
+</audio>
+</div>
+</div>
+<!------------------------------------->
+
+
+
+<div class="card">
+<!-- Cover Album -->
+<img src="LOGO.jpg">
+<div class="info">
+<!-- Judul Lagu -->
+<h2>DJ RULLY FVNKY</h2>
+<!-- Harga -->
+<div class="price">
+Rp45.000
+</div>
+<!-- Jumlah Terjual -->
+<div class="stats">
+Terjual 0
+</div>
+<!-- Tombol Preview -->
+<button class="play"
+onclick="
+document.querySelectorAll('audio').forEach(a=>{
+    a.pause();
+    a.currentTime=0;
+    a.style.display='none';
+});
+document.getElementById('audio3').style.display='block';
+document.getElementById('audio3').play();
+">
+▶ Preview
+</button>
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+<!-- Audio Lagu -->
+<audio id="audio3" controls style="display:none;">
+<source src="RULLY3.mp3">
+</audio>
+</div>
+</div>
+<!------------------------------------->
+
+
+
+
+
+</div>
+<!-- FOOTER -->
+<footer>
+© 2026 FHARID FLM STORE
+</footer>
+
+<script>
+function beli(button){
+    let lagu = button.parentElement.querySelector("h2").innerText;
+    let harga = button.parentElement.querySelector(".price").innerText;
+
+    let pesan = `Halo FHARID RMX,
+Saya mau beli flm:
+    
+${lagu}
+${harga}`;
+
+    window.open(
+        "https://wa.me/6285591652979?text=" + encodeURIComponent(pesan),
+        "_blank"
+    );
+}
+</script>
+
+</body>
+</html>
