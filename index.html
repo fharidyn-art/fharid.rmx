@@ -8,7 +8,7 @@
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FHARID FLM STORE</title>
+<title>FHARID RMX</title>
 
 <style>
 
@@ -139,6 +139,50 @@ audio{
 width:100%;
 margin-top:15px;
 }
+/* HALAMAN */
+.page{
+display:none;
+}
+.page.active{
+display:block;
+}
+
+/* MENU BAWAH */
+.menu{
+position:fixed;
+bottom:0px;
+left:50%;
+transform:translateX(-50%);
+width:100%;
+max-width:500px;
+background:rgba(20,20,20,0.1);
+backdrop-filter:blur(10px);
+-webkit-backdrop-filter:blur(15px);
+border:1px solid rgba(255,255,255,0.15);
+border-radius:30px;
+display:flex;
+justify-content:space-around;
+align-items:center;
+padding:12px 0;
+box-shadow:0 0 20px rgba(0,170,255,.25);
+z-index:1000;
+}
+
+
+.menu button{
+background:none;
+border:none;
+color:white;
+font-size:16px;
+font-weight:bold;
+cursor:pointer;
+padding:10px 20px;
+}
+
+.menu button:hover{
+color:#00bfff;
+}
+
 /* FOOTER */
 footer{
 text-align:center;
@@ -157,16 +201,79 @@ color:#888;
 <h1>FHARID RMX</h1>
 <p>Flm Enak Ya Cuman Di Fharid Rmx</p>
 </div>
-
 </div>
 </header>
+
+<div id="dashboard" class="page active">
+
+<div style="
+max-width:300px;
+margin:110px auto 120px;
+background:#181818;
+padding:20px;
+border-radius:40px;
+text-align:center;
+box-shadow:0 0 20px rgba(0,170,255,.35);
+">
+
+<h1 style="
+font-size:34px;
+color:#00bfff;
+margin-bottom:15px;
+">
+FHARID RMX
+</h1>
+<h2 style="margin-bottom:25px;">
+Jual Flm Kek Nya
+</h2>
+<p style="font-size:20px;line-height:40px;">
+
+🎵 FLM Premium<br>
+⚡ Request Remix<br>
+💎 Preview Sebelum Beli
+
+</p>
+
+<br>
+
+<button
+onclick="window.open('https://whatsapp.com/channel/0029VbDO1u0C1Fu5brKxTV12','_blank')"
+style="
+background:#00bfff;
+color:white;
+padding:15px 35px;
+border:none;
+border-radius:15px;
+font-size:20px;
+font-weight:bold;
+">
+💬 Testimoni
+</button>
+
+<br><br><br>
+
+<hr style="border:1px solid #444;">
+
+<br>
+
+<div style="font-size:20px;">
+
+<h3 id="totalProduk">⭐ Total Produk : 0</h3>
+
+<br>
+
+<h3 id="totalTerjual">🔥 Terjual : 0</h3>
+
+</div>
+
+</div>
+
+</div>
+
 <!-- PRODUK 1 -->
+<div id="produk" class="page">
 <div class="container">
 <!------------------------------------->
-
-
-
-
 <div class="card">
 <!-- Cover Album -->
 <img src="LOGO.jpg">
@@ -300,7 +407,7 @@ Rp50.000
 </div>
 <!-- Jumlah Terjual -->
 <div class="stats">
-Terjual 0
+Terjual 1
 </div>
 <!-- Tombol Preview -->
 <button class="play"
@@ -369,10 +476,21 @@ document.getElementById('audio5').play();
 
 
 </div>
+</div>
 <!-- FOOTER -->
 <footer>
 © 2026 FHARID FLM STORE
 </footer>
+
+<div class="menu">
+    <button onclick="showPage('dashboard')">
+        🏠<br>Dashboard
+    </button>
+
+    <button onclick="showPage('produk')">
+        🛍<br>Produk
+    </button>
+</div>
 
 <script>
 function beli(button){
@@ -390,6 +508,40 @@ ${harga}`;
         "_blank"
     );
 }
+function showPage(id){
+
+document.querySelectorAll(".page").forEach(function(page){
+page.classList.remove("active");
+});
+
+document.getElementById(id).classList.add("active");
+}
+// =========================
+// STATISTIK OTOMATIS
+// =========================
+
+function updateStatistik(){
+
+    let jumlahProduk = document.querySelectorAll(".card").length;
+
+    let jumlahTerjual = 0;
+
+    document.querySelectorAll(".stats").forEach(function(item){
+
+        let angka = item.innerText.replace("Terjual","").trim();
+
+        jumlahTerjual += parseInt(angka) || 0;
+
+    });
+
+    document.getElementById("totalProduk").innerHTML =
+    "⭐ Total Produk : " + jumlahProduk;
+
+    document.getElementById("totalTerjual").innerHTML =
+    "🔥 Terjual : " + jumlahTerjual;
+
+}
+updateStatistik();
 </script>
 
 </body>
