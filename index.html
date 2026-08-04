@@ -448,7 +448,7 @@ Rp50.000
 </div>
 <!-- Jumlah Terjual -->
 <div class="stats">
-Terjual 0
+Terjual 1
 </div>
 <!-- Tombol Preview -->
 <button class="play"
@@ -515,6 +515,47 @@ document.getElementById('audio6').play();
 </div>
 <!------------------------------------->
 
+
+
+
+
+<div class="card">
+<!-- Cover Album -->
+<img src="LOGO.jpg">
+<div class="info">
+<!-- Judul Lagu -->
+<h2>DJ - JJ FARRIJ RMX</h2>
+<!-- Harga -->
+<div class="price">
+Rp50.000
+</div>
+<!-- Jumlah Terjual -->
+<div class="stats">
+Terjual 0
+</div>
+<!-- Tombol Preview -->
+<button class="play"
+onclick="
+document.querySelectorAll('audio').forEach(a=>{
+    a.pause();
+    a.currentTime=0;
+    a.style.display='none';
+});
+document.getElementById('audio7').style.display='block';
+document.getElementById('audio7').play();
+">
+▶ Preview
+</button>
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+<!-- Audio Lagu -->
+<audio id="audio7" controls style="display:none;">
+<source src="FARRIJ7.mp3">
+</audio>
+</div>
+</div>
+<!------------------------------------->
 
 
 
