@@ -274,6 +274,50 @@ font-weight:bold;
 <div id="produk" class="page">
 <div class="container">
 <!------------------------------------->
+
+
+
+
+<div class="card">
+<!-- Cover Album -->
+<img src="LOGO.jpg">
+<div class="info">
+<!-- Judul Lagu -->
+<h2>THAILAND EDIT</h2>
+<!-- Harga -->
+<div class="price">
+Rp45.000
+</div>
+<!-- Jumlah Terjual -->
+<div class="stats">
+Terjual
+</div>
+<!-- Tombol Preview -->
+<button class="play"
+onclick="
+document.querySelectorAll('audio').forEach(a=>{
+    a.pause();
+    a.currentTime=0;
+    a.style.display='none';
+});
+document.getElementById('audio9').style.display='block';
+document.getElementById('audio9').play();
+">
+▶ Preview
+</button>
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+<!-- Audio Lagu -->
+<audio id="audio9" controls style="display:none;">
+<source src="TH9.mp3">
+</audio>
+</div>
+</div>
+<!------------------------------------->
+
+
+
 <div class="card">
 <!-- Cover Album -->
 <img src="LOGO.jpg">
