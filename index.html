@@ -3,9 +3,6 @@
 
 <head>
 
-
-<!--PENGATURAN WEB-->
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FHARID RMX</title>
@@ -24,13 +21,14 @@ font-family:Arial,sans-serif;
 body{
 background:url("BEAGROUND.jpg") no-repeat center center fixed;
 background-size:cover;
-color:hwb(0 100% 0%);
+color:white;
 }
+
 /* HEADER */
 header{
 padding:10px;
 background:linear-gradient(90deg,#6a00ff,#00bfff);
-box-shadow:0 0 20px lab(0% 0 0);
+box-shadow:0 0 20px black;
 
 position:fixed;
 top:0;
@@ -38,6 +36,7 @@ left:0;
 width:100%;
 z-index:1000;
 }
+
 .header-content{
 display:flex;
 align-items:center;
@@ -45,31 +44,37 @@ gap:18px;
 max-width:900px;
 margin:auto;
 }
+
 .header-content img{
 width:50px;
 height:50px;
 border-radius:50%;
 object-fit:cover;
 }
+
 .header-text h1{
 font-size:28px;
 margin-bottom:6px;
 }
+
 .header-text p{
 opacity:.8;
 font-size:15px;
 }
+
 /* CONTAINER */
 .container{
 width:85%;
 max-width:900px;
 margin:auto;
 padding:100px 0 50px;
+
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
 gap:25px;
 }
-/* CARD PRODUK */
+
+/* CARD */
 .card{
 background:#181818;
 border:2px solid #00aaff;
@@ -78,10 +83,12 @@ overflow:hidden;
 transition:.3s;
 box-shadow:0 0 15px rgba(0,170,255,.25);
 }
+
 .card:hover{
 transform:translateY(-8px);
 box-shadow:0 0 25px #00aaff;
 }
+
 .card img{
 width:85%;
 margin:20px auto;
@@ -90,7 +97,8 @@ aspect-ratio:1/1;
 object-fit:cover;
 border-radius:10px;
 }
-/* INFO PRODUK */
+
+/* INFO */
 .info{
 padding:18px;
 }
@@ -98,18 +106,20 @@ padding:18px;
 .info h2{
 margin-bottom:10px;
 font-size:23px;
-
 }
+
 .price{
 font-size:24px;
 color:#00ff88;
 margin:10px 0;
 font-weight:bold;
 }
+
 .stats{
 color:#bbb;
 margin-bottom:15px;
 }
+
 /* TOMBOL */
 button{
 padding:12px;
@@ -120,29 +130,35 @@ font-size:16px;
 font-weight:bold;
 transition:.3s;
 }
+
 .play{
 background:#00bfff;
 color:white;
 width:48%;
 }
+
 .buy{
 background:#00ff88;
 color:white;
 width:48%;
 float:right;
 }
+
 button:hover{
 opacity:.85;
 }
+
 /* AUDIO */
 audio{
 width:100%;
 margin-top:15px;
 }
+
 /* HALAMAN */
 .page{
 display:none;
 }
+
 .page.active{
 display:block;
 }
@@ -150,24 +166,30 @@ display:block;
 /* MENU BAWAH */
 .menu{
 position:fixed;
-bottom:0px;
+bottom:0;
 left:50%;
 transform:translateX(-50%);
+
 width:100%;
 max-width:500px;
+
 background:rgba(20,20,20,0.1);
 backdrop-filter:blur(10px);
 -webkit-backdrop-filter:blur(15px);
+
 border:1px solid rgba(255,255,255,0.15);
 border-radius:30px;
+
 display:flex;
 justify-content:space-around;
 align-items:center;
+
 padding:12px 0;
+
 box-shadow:0 0 20px rgba(0,170,255,.25);
+
 z-index:1000;
 }
-
 
 .menu button{
 background:none;
@@ -189,20 +211,71 @@ text-align:center;
 padding:20px;
 color:#888;
 }
+
+
+  /* PROGRESS BAR */
+
+.progress-box{
+    width:85%;
+    margin:0 auto 0px;
+}
+  
+
+.progress-bar{
+    width:100%;
+    height:5px;
+    background:#444;
+    border-radius:10px;
+    overflow:hidden;
+    cursor:pointer;
+}
+
+.progress{
+    width:0%;
+    height:100%;
+    background:#ffffff;
+    border-radius:10px;
+}
+
+.time{
+    display:flex;
+    justify-content:space-between;
+    margin-top:6px;
+    font-size:12px;
+    color:#aaa;
+}
+
+
+  
+
 </style>
 </head>
+
 <body>
-  
+
 <!-- HEADER -->
 <header>
+
 <div class="header-content">
+
 <img src="LOGO.jpg" alt="Logo">
+
 <div class="header-text">
+
 <h1>FHARID RMX</h1>
+
 <p>Flm Enak Ya Cuman Di Fharid Rmx</p>
+
 </div>
+
 </div>
+
 </header>
+
+
+<!-- ========================= -->
+<!-- DASHBOARD -->
+<!-- ========================= -->
 
 <div id="dashboard" class="page active">
 
@@ -216,25 +289,25 @@ text-align:center;
 box-shadow:0 0 20px rgba(0,170,255,.35);
 ">
 
-<h1 style="
-font-size:35px;
-color:#00bfff;
+<h2 style="
+font-size:25px;
 margin-bottom:20px;
 ">
-</h1>
-<h2 style="
-  font-size: 25px;
-  margin-bottom:20px;">
 Klik (🛍Produk) Di Kanan Bawah
 </h2>
-<p style="font-size:15px;line-height:30px;">
+
+<p style="
+font-size:15px;
+line-height:30px;
+">
 
 🎵 Riquest Flm Style & Lagu<br>
 ⚡ Susun Chord Lagu<br>
-💎 Susun Melody Vocal<br> 
-  Dan Lain Lain, Bisa Wawa
+💎 Susun Melody Vocal<br>
+Dan Lain Lain, Bisa Wawa
 
 </p>
+
 <br>
 
 <button
@@ -248,12 +321,12 @@ border-radius:15px;
 font-size:20px;
 font-weight:bold;
 ">
+
 💬 Testimoni
+
 </button>
 
-
-</p>
-<br>
+<br><br>
 
 <button
 onclick="window.open('https://whatsapp.com/channel/0029VbDO1u0C1Fu5brKxTV12','_blank')"
@@ -266,13 +339,11 @@ border-radius:15px;
 font-size:20px;
 font-weight:bold;
 ">
+
 💬 Saluran Ku
+
 </button>
 
-
-  
-
-  
 <br><br><br>
 
 <hr style="border:1px solid #444;">
@@ -281,835 +352,909 @@ font-weight:bold;
 
 <div style="font-size:20px;">
 
-<h3 id="totalProduk">⭐ Total Produk : 0</h3>
+<h3 id="totalProduk">
+⭐ Total Produk : 0
+</h3>
 
 <br>
 
-<h3 id="totalTerjual">🔥 Terjual : 0</h3>
+<h3 id="totalTerjual">
+🔥 Terjual : 0
+</h3>
 
 </div>
 
 </div>
 
 </div>
+
+
+<!-- ========================= -->
+<!-- PRODUK -->
+<!-- ========================= -->
+
+<div id="produk" class="page">
+
+<div class="container">
+
 
 <!-- PRODUK 1 -->
-<div id="produk" class="page">
-<div class="container">
-<!------------------------------------->
-
-
-
-
-
-
-
-  
-
-
 <div class="card">
-<!-- Cover Album -->
+
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
+
 <h2>RADYA SPN - SELAIN DONATUR VIRAL</h2>
-<!-- Harga -->
+
 <div class="price">
 Rp47.500
 </div>
-<!-- Jumlah Terjual -->
+
 <div class="stats">
-Terjual 4
+Terjual 6
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio13').style.display='block';
-document.getElementById('audio13').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio13" controls style="display:none;">
+
+<audio>
 <source src="DONATUR13.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
+<!-- PRODUK 2 -->
+<div class="card">
 
-
-
-  
-
-  <div class="card">
-<!-- Cover Album -->
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
+
 <h2>RADYA SPN - V2</h2>
-<!-- Harga -->
+
 <div class="price">
 Rp45.000
 </div>
-<!-- Jumlah Terjual -->
+
 <div class="stats">
-Terjual 3
+Terjual 7
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio15').style.display='block';
-document.getElementById('audio15').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio15" controls style="display:none;">
+
+<audio>
 <source src="RADYA V2 15.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
+<!-- PRODUK 3 -->
+<div class="card">
 
-
-
-
-
-
-
-  <div class="card">
-<!-- Cover Album -->
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
+
 <h2>RADYA SPN - V1</h2>
-<!-- Harga -->
+
 <div class="price">
 Rp50.000
 </div>
-<!-- Jumlah Terjual -->
+
 <div class="stats">
-Terjual 1
+Terjual 5
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio6').style.display='block';
-document.getElementById('audio6').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio6" controls style="display:none;">
+
+<audio>
 <source src="RADYA6 .mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
-
-
-
+<!-- PRODUK 4 -->
 <div class="card">
-<!-- Cover Album -->
+
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
+
 <h2>THAILAND - AIPON KUPI</h2>
-<!-- Harga -->
+
 <div class="price">
 Rp47.500
 </div>
-<!-- Jumlah Terjual -->
+
 <div class="stats">
-Terjual 0
+Terjual 8
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio16').style.display='block';
-document.getElementById('audio16').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio16" controls style="display:none;">
+
+<audio>
 <source src="TH KUPI16.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
+<!-- PRODUK 5 -->
+<div class="card">
 
-
-
-  <div class="card">
-<!-- Cover Album -->
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
+
 <h2>MILION - IMAM SIDIK</h2>
-<!-- Harga -->
+
 <div class="price">
 Rp47.500
 </div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 0
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio17').style.display='block';
-document.getElementById('audio17').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio17" controls style="display:none;">
-<source src="MILION STARS17.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
 
-
-
-  
-
-
-
-
-
-  
-
-
-
-  
-
-
-  
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>HIPDUT - LATASYA</h2>
-<!-- Harga -->
-<div class="price">
-Rp35.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 10
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio11').style.display='block';
-document.getElementById('audio11').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio11" controls style="display:none;">
-<source src="HIPDUT11.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>THAILAND EDIT</h2>
-<!-- Harga -->
-<div class="price">
-Rp45.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 6
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio9').style.display='block';
-document.getElementById('audio9').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio9" controls style="display:none;">
-<source src="TH9.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>STYLE JJ - AGA BETCH</h2>
-<!-- Harga -->
-<div class="price">
-Rp45.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 0
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio14').style.display='block';
-document.getElementById('audio14').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio14" controls style="display:none;">
-<source src="AGA14.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-
-  
-
-
-
-  <div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>EL WATER - FULL LAGU</h2>
-<!-- Harga -->
-<div class="price">
-Rp40.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 0
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio12').style.display='block';
-document.getElementById('audio12').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio12" controls style="display:none;">
-<source src="WATER12.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-
-
-  
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>DJ STYHGT NANDA 777</h2>
-<!-- Harga -->
-<div class="price">
-Rp45.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 4
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio1').style.display='block';
-document.getElementById('audio1').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio1" controls style="display:none;">
-<source src="NANDA1.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>DJ SATRIQ - FULL</h2>
-<!-- Harga -->
-<div class="price">
-Rp40.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 3
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio10').style.display='block';
-document.getElementById('audio10').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio10" controls style="display:none;">
-<source src="SATRIQ10.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>PLAY DATE - IMAM ISDX</h2>
-<!-- Harga -->
-<div class="price">
-Rp45.000
-</div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 6
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio2').style.display='block';
-document.getElementById('audio2').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio2" controls style="display:none;">
-<source src="IMAM SIDIK2.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>DJ RULLY FVNKY</h2>
-<!-- Harga -->
-<div class="price">
-Rp35.000
-</div>
-<!-- Jumlah Terjual -->
 <div class="stats">
 Terjual 2
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio3').style.display='block';
-document.getElementById('audio3').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio3" controls style="display:none;">
-<source src="RULLY3.mp3">
+
+<audio>
+<source src="MILION STARS17.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
-
+<!-- PRODUK 6 -->
 <div class="card">
-<!-- Cover Album -->
+
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
-<h2>DJ PLAT KT - RAGIL YT</h2>
-<!-- Harga -->
+
+<h2>HIPDUT - LATASYA</h2>
+
 <div class="price">
-Rp40.000
+Rp35.000
 </div>
-<!-- Jumlah Terjual -->
+
 <div class="stats">
-Terjual 11
+Terjual 10
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio4').style.display='block';
-document.getElementById('audio4').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio4" controls style="display:none;">
-<source src="RAGIL4.mp3">
+
+<audio>
+<source src="HIPDUT11.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
-
-
+<!-- PRODUK 7 -->
 <div class="card">
-<!-- Cover Album -->
+
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
-<h2>YOU KNOW - IMAM ISDX</h2>
-<!-- Harga -->
+
+<h2>THAILAND EDIT</h2>
+
 <div class="price">
-Rp40.000
+Rp45.000
 </div>
-<!-- Jumlah Terjual -->
+
+<div class="stats">
+Terjual 6
+</div>
+
+<button class="play">
+▶️️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="TH9.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 8 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>STYLE JJ - AGA BETCH</h2>
+
+<div class="price">
+Rp45.000
+</div>
+
 <div class="stats">
 Terjual 3
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio5').style.display='block';
-document.getElementById('audio5').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio5" controls style="display:none;">
-<source src="YOU KNOW5.mp3">
+
+<audio>
+<source src="AGA14.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
 
 
-
-
-
-
-
-
-
+<!-- PRODUK 9 -->
 <div class="card">
-<!-- Cover Album -->
+
 <img src="LOGO.jpg">
+
 <div class="info">
-<!-- Judul Lagu -->
-<h2>DJ - JJ FARRIJ RMX</h2>
-<!-- Harga -->
+
+<h2>EL WATER - FULL LAGU</h2>
+
 <div class="price">
 Rp40.000
 </div>
-<!-- Jumlah Terjual -->
-<div class="stats">
-Terjual 4
-</div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio7').style.display='block';
-document.getElementById('audio7').play();
-">
-▶ Preview
-</button>
-<button class="buy" onclick="beli(this)">
-🛒 Buy
-</button>
-<!-- Audio Lagu -->
-<audio id="audio7" controls style="display:none;">
-<source src="FARRIJ7.mp3">
-</audio>
-</div>
-</div>
-<!------------------------------------->
 
-
-
-
-<div class="card">
-<!-- Cover Album -->
-<img src="LOGO.jpg">
-<div class="info">
-<!-- Judul Lagu -->
-<h2>DJ - KHARIS SOPAN</h2>
-<!-- Harga -->
-<div class="price">
-Rp40.000
-</div>
-<!-- Jumlah Terjual -->
 <div class="stats">
 Terjual 0
 </div>
-<!-- Tombol Preview -->
-<button class="play"
-onclick="
-document.querySelectorAll('audio').forEach(a=>{
-    a.pause();
-    a.currentTime=0;
-    a.style.display='none';
-});
-document.getElementById('audio8').style.display='block';
-document.getElementById('audio8').play();
-">
-▶ Preview
+
+<button class="play">
+▶️️️️️️ Preview
 </button>
+
 <button class="buy" onclick="beli(this)">
 🛒 Buy
 </button>
-<!-- Audio Lagu -->
-<audio id="audio8" controls style="display:none;">
+
+<audio>
+<source src="WATER12.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 10 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>DJ STYHGT NANDA 777</h2>
+
+<div class="price">
+Rp45.000
+</div>
+
+<div class="stats">
+Terjual 4
+</div>
+
+<button class="play">
+▶️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="NANDA1.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 11 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>DJ SATRIQ - FULL</h2>
+
+<div class="price">
+Rp40.000
+</div>
+
+<div class="stats">
+Terjual 3
+</div>
+
+<button class="play">
+▶️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="SATRIQ10.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 12 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>PLAY DATE - IMAM ISDX</h2>
+
+<div class="price">
+Rp45.000
+</div>
+
+<div class="stats">
+Terjual 6
+</div>
+
+<button class="play">
+▶️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="IMAM SIDIK2.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 13 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>DJ RULLY FVNKY</h2>
+
+<div class="price">
+Rp35.000
+</div>
+
+<div class="stats">
+Terjual 6
+</div>
+
+<button class="play">
+▶️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="RULLY3.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 14 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>DJ PLAT KT - RAGIL YT</h2>
+
+<div class="price">
+Rp40.000
+</div>
+
+<div class="stats">
+Terjual 11
+</div>
+
+<button class="play">
+▶️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="RAGIL4.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 15 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>YOU KNOW - IMAM ISDX</h2>
+
+<div class="price">
+Rp40.000
+</div>
+
+<div class="stats">
+Terjual 3
+</div>
+
+<button class="play">
+▶️️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="YOU KNOW5.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 16 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>DJ - JJ FARRIJ RMX</h2>
+
+<div class="price">
+Rp40.000
+</div>
+
+<div class="stats">
+Terjual 4
+</div>
+
+<button class="play">
+▶️️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
+<source src="FARRIJ7.mp3">
+</audio>
+
+</div>
+</div>
+
+
+<!-- PRODUK 17 -->
+<div class="card">
+
+<img src="LOGO.jpg">
+
+<div class="info">
+
+<h2>DJ - KHARIS SOPAN</h2>
+
+<div class="price">
+Rp40.000
+</div>
+
+<div class="stats">
+Terjual 0
+</div>
+
+<button class="play">
+▶️️️️️️️ Preview
+</button>
+
+<button class="buy" onclick="beli(this)">
+🛒 Buy
+</button>
+
+<audio>
 <source src="KHARIS8.mp3">
 </audio>
+
 </div>
 </div>
-<!------------------------------------->
-
-
-
 
 
 </div>
 </div>
-<!-- FOOTER -->
+
+
 <footer>
 </footer>
 
-<div class="menu">
-    <button onclick="showPage('dashboard')">
-        🏠<br>Dashboard
-    </button>
 
-    <button onclick="showPage('produk')">
-        🛍<br>Produk
-    </button>
+<!-- MENU -->
+<div class="menu">
+
+<button onclick="showPage('dashboard')">
+🏠<br>Dashboard
+</button>
+
+<button onclick="showPage('produk')">
+🛍<br>Produk
+</button>
+
 </div>
 
+
 <script>
+
+/* =========================
+   BUY WHATSAPP
+========================= */
+
 function beli(button){
-    let lagu = button.parentElement.querySelector("h2").innerText;
-    let harga = button.parentElement.querySelector(".price").innerText;
+
+    let lagu =
+    button.parentElement
+    .querySelector("h2")
+    .innerText;
+
+    let harga =
+    button.parentElement
+    .querySelector(".price")
+    .innerText;
 
     let pesan = `Halo FHARID RMX,
 Saya mau beli flm:
-    
+
 ${lagu}
 ${harga}`;
 
     window.open(
-        "https://wa.me/6285591652979?text=" + encodeURIComponent(pesan),
+        "https://wa.me/6285591652979?text="
+        + encodeURIComponent(pesan),
         "_blank"
     );
+
 }
-function showPage(id){
 
-document.querySelectorAll(".page").forEach(function(page){
-page.classList.remove("active");
-});
 
-document.getElementById(id).classList.add("active");
-}
-// =========================
-// STATISTIK OTOMATIS
-// =========================
+/* =========================
+   PLAY / PAUSE PREVIEW
+========================= */
 
-function updateStatistik(){
+document.querySelectorAll(".play").forEach(function(button){
 
-    let jumlahProduk = document.querySelectorAll(".card").length;
+    button.addEventListener("click",function(){
 
-    let jumlahTerjual = 0;
+        let card =
+        this.closest(".card");
 
-    document.querySelectorAll(".stats").forEach(function(item){
+        let audio =
+        card.querySelector("audio");
 
-        let angka = item.innerText.replace("Terjual","").trim();
 
-        jumlahTerjual += parseInt(angka) || 0;
+        /* JIKA SEDANG PLAY */
+
+        if(!audio.paused){
+
+            audio.pause();
+
+            this.innerHTML = "▶️️️️️️️ Play";
+
+            return;
+
+        }
+
+
+        /* MATIKAN AUDIO LAIN */
+
+        document.querySelectorAll("audio").forEach(function(otherAudio){
+
+            if(otherAudio !== audio){
+
+                otherAudio.pause();
+
+                otherAudio.currentTime = 0;
+
+                let otherButton =
+                otherAudio
+                .closest(".card")
+                .querySelector(".play");
+
+                if(otherButton){
+
+                    otherButton.innerHTML =
+                    "▶️️️️️️️ Preview";
+
+                }
+
+            }
+
+        });
+
+
+        /* PLAY AUDIO */
+
+        audio.style.display = "block";
+
+        audio.play();
+
+        this.innerHTML = "⏸ Pause";
 
     });
 
+
+    /* JIKA AUDIO DI-PAUSE DARI CONTROLS */
+
+    let audio =
+    button.closest(".card")
+    .querySelector("audio");
+
+    audio.addEventListener("pause",function(){
+
+        if(audio.currentTime > 0 &&
+           audio.currentTime < audio.duration){
+
+            button.innerHTML = "▶️️️️️️️ Play";
+
+        }
+
+    });
+
+
+    /* JIKA LAGU SELESAI */
+
+    audio.addEventListener("ended",function(){
+
+        button.innerHTML = "▶️️️️️️️ Preview";
+
+        audio.style.display = "none";
+
+    });
+
+});
+
+
+/* =========================
+   PINDAH HALAMAN
+========================= */
+
+function showPage(id){
+
+    document
+    .querySelectorAll(".page")
+    .forEach(function(page){
+
+        page.classList.remove("active");
+
+    });
+
+    document
+    .getElementById(id)
+    .classList.add("active");
+
+}
+
+
+/* =========================
+   STATISTIK OTOMATIS
+========================= */
+
+function updateStatistik(){
+
+    let jumlahProduk =
+    document.querySelectorAll(".card").length;
+
+    let jumlahTerjual = 0;
+
+    document
+    .querySelectorAll(".stats")
+    .forEach(function(item){
+
+        let angka =
+        item.innerText
+        .replace("Terjual","")
+        .trim();
+
+        jumlahTerjual +=
+        parseInt(angka) || 0;
+
+    });
+
+
     document.getElementById("totalProduk").innerHTML =
     "⭐ Total Produk : " + jumlahProduk;
+
 
     document.getElementById("totalTerjual").innerHTML =
     "🔥 Terjual : " + jumlahTerjual;
 
 }
+
 updateStatistik();
+
+
+
+  document.querySelectorAll(".card").forEach(function(card){
+
+    let audio = card.querySelector("audio");
+
+    if(!audio) return;
+
+    let box = document.createElement("div");
+
+    box.className = "progress-box";
+
+    box.innerHTML = `
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+
+        <div class="time">
+            <span class="current">0:00</span>
+            <span class="duration">0:00</span>
+        </div>
+    `;
+
+    card.querySelector("img").after(box);
+
+    let progress = box.querySelector(".progress");
+    let current = box.querySelector(".current");
+    let duration = box.querySelector(".duration");
+    let progressBar = box.querySelector(".progress-bar");
+
+    function formatTime(seconds){
+
+        if(isNaN(seconds)) return "0:00";
+
+        let menit = Math.floor(seconds / 60);
+        let detik = Math.floor(seconds % 60);
+
+        if(detik < 10){
+            detik = "0" + detik;
+        }
+
+        return menit + ":" + detik;
+    }
+
+    audio.addEventListener("loadedmetadata", function(){
+
+        duration.innerText = formatTime(audio.duration);
+
+    });
+
+    audio.addEventListener("timeupdate", function(){
+
+        let persen =
+        (audio.currentTime / audio.duration) * 100;
+
+        progress.style.width = persen + "%";
+
+        current.innerText =
+        formatTime(audio.currentTime);
+
+    });
+
+    progressBar.addEventListener("pointerdown", function(e){
+
+    e.preventDefault();
+
+    function geser(ev){
+
+        let rect = progressBar.getBoundingClientRect();
+
+        let posisi =
+        (ev.clientX - rect.left) / rect.width;
+
+        posisi = Math.max(0, Math.min(1, posisi));
+
+        audio.currentTime =
+        posisi * audio.duration;
+
+    }
+
+    geser(e);
+
+    function selesai(){
+
+        document.removeEventListener("pointermove", geser);
+        document.removeEventListener("pointerup", selesai);
+
+    }
+
+    document.addEventListener("pointermove", geser);
+    document.addEventListener("pointerup", selesai);
+
+});
+
+    audio.addEventListener("ended", function(){
+
+        progress.style.width = "0%";
+
+        current.innerText = "0:00";
+
+    });
+
+});
+
+
+  
 </script>
 
 </body>
